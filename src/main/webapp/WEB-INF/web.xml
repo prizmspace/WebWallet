@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <!-- Servlets -->
+    <servlet>
+        <servlet-name>randomServlet</servlet-name>
+        <servlet-class>prizm.server.RandomServiceImpl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>solr</servlet-name>
+        <servlet-class>org.mitre.dsmiley.httpproxy.ProxyServlet</servlet-class>
+        <init-param>
+            <param-name>targetUri</param-name>
+            <param-value>http://localhost:9576/prizm</param-value>
+        </init-param>
+        <init-param>
+            <param-name>log</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Emission</servlet-name>
+        <servlet-class>prizm.servlet.Emission</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Supply</servlet-name>
+        <servlet-class>prizm.servlet.Supply</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fullEmission</servlet-name>
+        <servlet-class>prizm.servlet.fullEmission</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>randomServlet</servlet-name>
+        <url-pattern>/Prizm/random</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>solr</servlet-name>
+        <url-pattern>/prizm</url-pattern>
+    </servlet-mapping>
+    <!-- Default page to serve -->
+    <servlet-mapping>
+        <servlet-name>Emission</servlet-name>
+        <url-pattern>/emission</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Supply</servlet-name>
+        <url-pattern>/supply</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fullEmission</servlet-name>
+        <url-pattern>/fullEmission</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>Prizm.html</welcome-file>
+    </welcome-file-list>
+</web-app>

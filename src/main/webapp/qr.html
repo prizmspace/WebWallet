@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="canonical" href="https://wallet.prizm.space" />
+    <title>PRIZM Gaze</title>
+    <script type="text/javascript" src="./js/qr-scanner.umd.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="Prizm.css" />
+    <link type="text/css" rel="stylesheet" href="qr.css" />
+</head>
+<body>
+<noscript>
+    <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+    </div>
+</noscript>
+<video id="scanner-view"></video>
+<div id="logo-wrapper"><img src="pzm.png" id="logo"/></div>
+<div id="focus"></div>
+<script type="text/javascript">
+        QrScanner.WORKER_PATH = './js/qr-scanner-worker.min.js';
+        const qrScanner = new QrScanner(document.getElementById('scanner-view'), result => {qrScanner.stop();window.location.href='https://2021.prizm.space/?to='+result;});
+        qrScanner.start();
+</script>
+</body>
+</html>

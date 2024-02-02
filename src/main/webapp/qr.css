@@ -1,0 +1,98 @@
+#logo {
+    position: relative;
+    width: 100px;
+    padding: 20px;
+    border-radius: 0 0 25px 25px;
+}
+
+#logo-wrapper {
+    z-index: 99999999;
+}
+
+#scanner-view {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #ccc;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: url('img/qr.png') no-repeat;
+    background-position: center;
+}
+
+#focus {
+        
+        box-shadow:  0 0 15px -2px #000, 0 0 0px 700px white;
+        border-radius: 25px;
+    }
+
+    .overlay {
+        background-color: rgba(0,0,0,0.5);
+        position: fixed;
+    }
+
+
+@media (orientation:portrait) {
+
+    #scanner-view {
+        background-size: 50vw;
+    }
+
+    #logo {
+        width: 100px;
+    }
+
+    #logo-wrapper {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #focus {
+        position: fixed;
+        width: 65vw;
+        height: 65vw;
+        top: 50%;
+        margin-top: -32.5vw;
+        left: 17.5vw;
+    }
+
+}
+
+@media (orientation:landscape) {
+
+    #scanner-view {
+        background-size: 50vh;
+    }
+
+    #logo {
+        top: 50%;
+        margin-top: -50px;
+        margin-left: -20px;
+        transform: rotate(-90deg);
+    }
+
+    #logo-wrapper {
+        position: fixed;
+        height: 100%;
+        left: 0px;
+        bottom: 0px;
+        text-align: left;
+        
+    }
+
+    #focus {
+        position: fixed;
+        width: 65vh;
+        height: 65vh;
+        left: 50%;
+        margin-left: -32.5vh;
+        top: 15vh;
+    }
+
+    
+
+}

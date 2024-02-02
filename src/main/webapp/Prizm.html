@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="canonical" href="https://wallet.prizm.space" />
+    <title>PRIZM Wallet</title>
+    <script type="text/javascript" src="./js/qr-scanner.umd.min.js"></script>
+    <script type="text/javascript" src="./js/clipboard.min.js"></script>
+    <script type="text/javascript" src="./js/qrcode.js"></script>
+    <script type="text/javascript" src="./js/pako.js"></script>
+    <script type="text/javascript" src="./js/aes.js"></script>
+    <script type="text/javascript" src="./js/sha256.js"></script>
+    <script type="text/javascript" src="./js/curve25519.js"></script>
+    <script type="text/javascript" src="./js/curve25519_.js"></script>
+    <script type="text/javascript" src="./js/jsbn.js"></script>
+    <script type="text/javascript" src="./js/jsbn2.js"></script>
+    <script type="text/javascript" src="./js/big.js"></script>
+    <script type="text/javascript" src="./js/converters.js"></script>
+    <script type="text/javascript" src="./js/prizmaddress.js"></script>
+    <script type="text/javascript" src="./js/a_main.js?version=20200301"></script>
+    <script type="text/javascript" language="javascript" src="Prizm/Prizm.nocache.js"></script>
+    <link type="text/css" rel="stylesheet" href="Prizm.css" />
+  </head>
+  <body>
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <input type="text" value="Loading..." id="copy-input"/>
+    <button type="button" value="" data-clipboard-target="#copy-input" id="copy-button"></button>
+    <script type="text/javascript">
+        var clipboard = new ClipboardJS('#copy-button');
+    </script>
+
+    <div id="prizm-gaze-overlay">
+        <video id="scanner-view"></video>
+        <div id="logo-wrapper"><img src="pzm.png" id="logo"/></div>
+        <div id="focus"></div>
+        <button type="button" class="close" data-dismiss="modal" onclick="stopScanner()">×</button>
+        <button id="flashlight-button" type="button" class="light" data-dismiss="modal" onclick="toggleFlashlight()">×</button>
+    </div>
+    <div id="printme"></div>
+  </body>
+</html>
