@@ -1,1 +1,1 @@
-These are the sources of the prism wallet based on WEB technology
+These are the sources of the Prizm wallet based on WEB technology
